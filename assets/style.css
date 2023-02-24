@@ -132,5 +132,5 @@ footer{
 .img-footer{
     width: 10em;
     display: flex; 
-    justify-content:space-between ;   
+    justify-content:space-around ;   
 }
