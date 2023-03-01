@@ -1,10 +1,9 @@
 const card = document.getElementById('card')
-console.log(card)
+//console.log(card)
 
 let fragment = document.createDocumentFragment()
 
-for(let element of data.events)
-{
+for (let element of data.events) {
     let div = document.createElement('div')
     div.classList.add("card")
     div.style.width = "18rem"
@@ -14,10 +13,49 @@ for(let element of data.events)
             <p class="card-text">${element.description}</p>
             <h4>Price</h4>
             <h4>$${element.price}</h4>
-            <a href="./details.html" class="btn btn-primary">Go Details</a>
-           
+            <a href="./details.html" class="btn btn-primary">Go Details</a>           
          </div>}`
-    console.log(element)
+    
     fragment.appendChild(div)
-}
-card.appendChild(fragment)
+
+} card.appendChild(fragment)
+
+
+
+
+
+
+
+
+//hacer categorys dinamicas
+
+
+const arreglo = []
+for (let element of data.events) {
+    let categoria = element.category
+    if (!arreglo.includes(categoria)) {
+        arreglo.push(categoria)
+    }
+}console.log(arreglo);
+
+const formCat = document.getElementById('formCat')
+let checkbox = document.createDocumentFragment()
+for (let element of arreglo) {
+    let div = document.createElement('div')
+    div.classList.add("formCat")
+        
+    div.innerHTML = `<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+    <label class="form-check-label" for="inlineRadio1">${element}</label>`
+
+  checkbox.appendChild(div)
+
+}formCat.appendChild(checkbox)
+
+
+
+
+
+
+
+
+

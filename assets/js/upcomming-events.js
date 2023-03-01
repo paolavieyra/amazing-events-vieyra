@@ -27,3 +27,28 @@ let futureDate = Date.parse(element.date)
     }
 }
 card_upcomming.appendChild(fragment)
+
+
+//hacer categorys dinamicas
+
+
+const arreglo = []
+for (let element of data.events) {
+    let categoria = element.category
+    if (!arreglo.includes(categoria)) {
+        arreglo.push(categoria)
+    }
+}console.log(arreglo);
+
+const formCat = document.getElementById('formCat')
+let checkbox = document.createDocumentFragment()
+for (let element of arreglo) {
+    let div = document.createElement('div')
+    div.classList.add("formCat")
+        
+    div.innerHTML = `<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+    <label class="form-check-label" for="inlineRadio1">${element}</label>`
+
+  checkbox.appendChild(div)
+
+}formCat.appendChild(checkbox)
