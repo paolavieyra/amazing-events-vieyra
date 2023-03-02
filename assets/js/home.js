@@ -20,16 +20,7 @@ for (let element of data.events) {
 
 } card.appendChild(fragment)
 
-
-
-
-
-
-
-
 //hacer categorys dinamicas
-
-
 const arreglo = []
 for (let element of data.events) {
     let categoria = element.category

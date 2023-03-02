@@ -1,17 +1,9 @@
-
 const card_past = document.getElementById('card_past')
-
 let fragment = document.createDocumentFragment()
-
 const actualDate = Date.parse(data.currentDate)
-
-
 for (let element of data.events) {
-
 let pastDate = Date.parse(element.date)
-
     if (pastDate < actualDate) {
-
         let div = document.createElement('div')
     div.classList.add("card")
     div.style.width = "18rem"
@@ -27,13 +19,7 @@ let pastDate = Date.parse(element.date)
     }
 }
 card_past.appendChild(fragment)
-
-
-
-
 //hacer categorys dinamicas
-
-
 const arreglo = []
 for (let element of data.events) {
     let categoria = element.category

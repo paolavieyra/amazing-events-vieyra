@@ -1,16 +1,8 @@
 const card_upcomming = document.getElementById('card_upcomming')
-
-
-
 let fragment = document.createDocumentFragment()
-
 const actualDate = Date.parse(data.currentDate)
-
-
 for (let element of data.events) {
-
-let futureDate = Date.parse(element.date)
-
+    let futureDate = Date.parse(element.date)
     if (futureDate > actualDate) {
         let div = document.createElement('div')
         div.classList.add("card")
@@ -27,28 +19,24 @@ let futureDate = Date.parse(element.date)
     }
 }
 card_upcomming.appendChild(fragment)
-
-
 //hacer categorys dinamicas
-
-
 const arreglo = []
 for (let element of data.events) {
     let categoria = element.category
     if (!arreglo.includes(categoria)) {
         arreglo.push(categoria)
     }
-}console.log(arreglo);
+} console.log(arreglo);
 
 const formCat = document.getElementById('formCat')
 let checkbox = document.createDocumentFragment()
 for (let element of arreglo) {
     let div = document.createElement('div')
     div.classList.add("formCat")
-        
+
     div.innerHTML = `<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
     <label class="form-check-label" for="inlineRadio1">${element}</label>`
 
-  checkbox.appendChild(div)
+    checkbox.appendChild(div)
 
-}formCat.appendChild(checkbox)
+} formCat.appendChild(checkbox)

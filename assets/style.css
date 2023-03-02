@@ -38,7 +38,7 @@ h2{
     font-weight: bolder !important;
 }
 main{
-    background-color: rgb(241, 241, 247);   
+    background-color: rgb(205, 183, 226);   
 }
 
 form {
@@ -82,8 +82,7 @@ legend:hover{
     color: aliceblue;
 }
 .table1{
-    width: 100% !important;
-    
+    width: 100% !important;    
     display: flex;
     flex-direction: column;
     gap: 50px;
@@ -127,13 +126,13 @@ footer{
     background-color: blueviolet;
     font-size: 2em;
     font-weight: bold;
-    color: aliceblue;
-    
+    color: aliceblue;    
     display: flex;
     justify-content: space-between;    
 }
 .img-footer{
     width: 10em;
     display: flex; 
-    justify-content:space-around ;   
+    justify-content:space-around ;
+     
 }
