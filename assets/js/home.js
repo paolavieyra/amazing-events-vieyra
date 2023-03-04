@@ -13,12 +13,13 @@ for (let element of data.events) {
             <p class="card-text">${element.description}</p>
             <h4>Price</h4>
             <h4>$${element.price}</h4>
-            <a href="./details.html" class="btn btn-primary">Go Details</a>           
+        <a href="./details.html?id=${element._id}" class="btn btn-primary">Go Details</a>           
          </div>}`
     
     fragment.appendChild(div)
 
 } card.appendChild(fragment)
+WebGL2RenderingContext.cards (data)
 
 //hacer categorys dinamicas
 const arreglo = []

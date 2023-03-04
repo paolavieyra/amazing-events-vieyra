@@ -33,9 +33,9 @@ h2{
     z-index: 1;    
 }
 .nav-link{
-    font-size: 25px !important;
+    font-size: 29px !important;
     /*color: blueviolet !important;*/
-    font-weight: bolder !important;
+    font-weight: bold !important;
 }
 main{
     background-color: rgb(205, 183, 226);   
@@ -115,7 +115,7 @@ legend:hover{
 }
 .card{
     border-radius: 22px;
-    box-shadow: 1px 2px 9px black;
+    box-shadow: 1px 3px 15px black;
 }
 h4{
     font-weight: bold !important;
@@ -128,11 +128,15 @@ footer{
     font-weight: bold;
     color: aliceblue;    
     display: flex;
-    justify-content: space-between;    
+    justify-content: space-around;    
 }
 .img-footer{
     width: 10em;
     display: flex; 
     justify-content:space-around ;
      
+}
+.card-title{
+    font-weight: bold;
+    font-size: 1.5rem;
 }
