@@ -1,11 +1,11 @@
 const queryString = location.search
 const params = new URLSearchParams(queryString)
-const id = params.get ("id")
+const id = params.get("id")
 const card = data.events.find(evento => evento._id == id)
 
-function mostrarCartas (){
+function mostrarCartas() {
     const div = document.querySelector(".details")
-div.innerHTML = `<div class="card" style="width:20rem;">
+    div.innerHTML = `<div class="card" style="width:20rem;">
 <img src=${card.image} class="card-img-top " alt="...">
 <div class="card-body text_center">
     <h5 class="card-title title_card">${card.name}</h5>
