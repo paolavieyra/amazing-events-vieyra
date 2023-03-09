@@ -7,7 +7,7 @@ if (inputText != "" && arraySearch.length == 0 ){
     let div = document.createElement('div')
         div.classList.add("card")
         div.style.width = "18rem"
-        div.innerHTML = `<h4>No hay coincidencia en su busqueda</h4>`
+        div.innerHTML = `<h3>No hay ${inputText} en nuestro catalogo de categorias seleccionadas</h3>`
         container.appendChild(div)
 }
 const actualDate = Date.parse(data.currentDate)

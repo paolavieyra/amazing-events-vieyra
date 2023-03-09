@@ -12,7 +12,8 @@ function traerCartas(arrayCards, container) {
         let div = document.createElement('div')
         div.classList.add("card")
         div.style.width = "18rem"
-        div.innerHTML = `<h4>No hay coincidencia en su busqueda</h4>`
+        div.innerHTML = `<h3>No hay ${inputText} en nuestro catalogo de categorias seleccionadas</h3>`
+    
         container.appendChild(div)
     }
     for (let element of arrayCards) {
