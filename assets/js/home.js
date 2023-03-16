@@ -1,8 +1,45 @@
 
+let apiUrl = "https://mindhub-xj03.onrender.com/api/amazing"
 
 let inputText = ''
 const card = document.getElementById('card')
 //console.log(card)
+
+//funcion async
+async function traerDatos() {
+    try {
+        const response = await fetch(apiUrl);
+        const datos = await response.json();
+        let eventos = datos.events;
+        categorias(eventos)
+
+        traerCartas(eventos, card)
+        //agregar escuchador de eventos categorias
+        let checkboxs = document.querySelectorAll('input[type= checkbox]')
+        console.log(checkboxs);
+        checkboxs.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                inputsChequeados = Array.from(checkboxs).filter(checkbox => checkbox.checked).map(input => input.value)
+                //console.log(inputsChequeados);
+                filtrosCruzados(eventos)
+            }
+            )
+
+        })
+        const search_input = document.getElementById("search_input")
+        console.log(search_input)
+        search_input.addEventListener('keyup', () => {
+            inputText = search_input.value
+            //console.log(texto(inputText))
+            filtrosCruzados(eventos)
+        })
+    }
+    catch (error) {
+        console.log(error);
+
+    }
+}
+traerDatos()
 
 function traerCartas(arrayCards, container) {
 
@@ -12,8 +49,8 @@ function traerCartas(arrayCards, container) {
         let div = document.createElement('div')
         div.classList.add("card")
         div.style.width = "18rem"
-        div.innerHTML = `<h3>No hay ${inputText} en nuestro catalogo de categorias seleccionadas</h3>`
-    
+        div.innerHTML = `<h3>Sorry ${inputText} it is not in our catalog of events</h3>`
+
         container.appendChild(div)
     }
     for (let element of arrayCards) {
@@ -33,11 +70,12 @@ function traerCartas(arrayCards, container) {
 
     } container.appendChild(fragment)
 }
-traerCartas(data.events, card)
+//traerCartas(eventos, card)
 
 //hacer categorys dinamicas
-const arreglo = []
-for (let element of data.events) {
+function categorias(array) { 
+    const arreglo = []
+for (let element of array) {
     let categoria = element.category
     if (!arreglo.includes(categoria)) {
         arreglo.push(categoria)
@@ -57,18 +95,8 @@ for (let element of arreglo) {
 
 } formCat.appendChild(checkbox)
 
+}
 
-//agregar escuchador de eventos categorias
-let checkboxs = document.querySelectorAll('input[type= checkbox]')
-console.log(checkboxs);
-checkboxs.forEach(checkbox => {
-    checkbox.addEventListener('change', () => {
-        inputsChequeados = Array.from(checkboxs).filter(checkbox => checkbox.checked).map(input => input.value)
-        //console.log(inputsChequeados);
-        filtrosCruzados(data.events)
-    }
-    )
-})
 function verificarSeleccion(arrayString, arrayDeObjetos) {
     if (arrayString.length == 0) return arrayDeObjetos
 
@@ -82,14 +110,9 @@ function verificarSeleccion(arrayString, arrayDeObjetos) {
 let inputsChequeados = []
 let arraySearch = []
 
-const search_input = document.getElementById("search_input")
-console.log(search_input)
 
-search_input.addEventListener('keyup', () => {
-    inputText = search_input.value
-    //console.log(texto(inputText))
-    filtrosCruzados(data.events)
-})
+
+
 function texto(valor, arrayDeObjetos) {
     if (valor == "") return arrayDeObjetos
     return arrayDeObjetos.filter(elemento => elemento.name.toLowerCase().includes(valor.toLowerCase().trim()))
