@@ -1,5 +1,3 @@
-
-
 let apiUrl = "https://mindhub-xj03.onrender.com/api/amazing"
 
 let inputText = ''
@@ -22,7 +20,7 @@ async function traerDatos() {
             checkbox.addEventListener('change', () => {
                 inputsChequeados = Array.from(checkboxs).filter(checkbox => checkbox.checked).map(input => input.value)
                 //console.log(inputsChequeados);
-                filtrosCruzados(eventos)
+                filtrosCruzados(pastEvents)
             }
             )
 
@@ -32,7 +30,7 @@ async function traerDatos() {
         search_input.addEventListener('keyup', () => {
             inputText = search_input.value
             //console.log(texto(inputText))
-            filtrosCruzados(eventos)
+            filtrosCruzados(pastEvents)
         })
     }
     catch (error) {

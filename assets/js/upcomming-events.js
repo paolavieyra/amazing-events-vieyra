@@ -20,7 +20,7 @@ async function traerDatos() {
             checkbox.addEventListener('change', () => {
                 inputsChequeados = Array.from(checkboxs).filter(checkbox => checkbox.checked).map(input => input.value)
                 //console.log(inputsChequeados);
-                filtrosCruzados(eventos)
+                filtrosCruzados(uppEvents)
             }
             )
 
@@ -30,7 +30,7 @@ async function traerDatos() {
         search_input.addEventListener('keyup', () => {
             inputText = search_input.value
             //console.log(texto(inputText))
-            filtrosCruzados(eventos)
+            filtrosCruzados(uppEvents)
         })
     }
     catch (error) {

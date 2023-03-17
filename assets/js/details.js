@@ -1,12 +1,6 @@
 let apiUrl = "https://mindhub-xj03.onrender.com/api/amazing"
 
-
-
-
-
-
 fetch(apiUrl)
-
     .then(response => response.json())
     .then(data => {
         const events = data.events
