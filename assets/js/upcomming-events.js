@@ -11,8 +11,8 @@ async function traerDatos() {
         const datos = await response.json();
         let eventos = datos.events;
         categorias(eventos)
-        const pastEvents = eventos.filter(elemento => new Date(elemento.date) > new Date(datos.currentDate))
-        traerCartas(pastEvents, card)
+        const uppEvents = eventos.filter(elemento => new Date(elemento.date) > new Date(datos.currentDate))
+        traerCartas(uppEvents, card)
         //agregar escuchador de eventos categorias
         let checkboxs = document.querySelectorAll('input[type= checkbox]')
         console.log(checkboxs);

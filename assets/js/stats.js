@@ -69,7 +69,7 @@ function introducirTabla2 (array,contenedor){
     for(categoria of categorias){
         let trContenedor = document.createElement('tr')
         trContenedor.innerHTML = `<td>${categoria}</td>
-        <td>${calcularGanancias(array,categoria)}</td>
+        <td>$ ${calcularGanancias(array,categoria)}</td>
         <td>${calcularAsistencia(array,categoria)}%</td>`
         fragmento.appendChild(trContenedor)
     }

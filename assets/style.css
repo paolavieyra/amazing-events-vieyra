@@ -19,8 +19,8 @@ h1{
     font-size: 90px !important;
     color: blueviolet !important;
 }
-.carousel{
-    margin: 30px;
+#carouselExample{
+    margin: 1px !important;
 }
 h2{
     text-align: center;
@@ -96,7 +96,7 @@ legend:hover{
     display: flex;
     height: 400px;
     background-size: cover;
-    display: flex;
+    
     justify-content: flex-start;
 }
 
@@ -131,7 +131,7 @@ footer{
     justify-content: space-around;    
 }
 .img-footer{
-    width: 10em;
+    width: 6em;
     display: flex; 
     justify-content:space-around ;
      
