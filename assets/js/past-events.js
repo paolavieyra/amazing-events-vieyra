@@ -11,7 +11,7 @@ async function traerDatos() {
         const datos = await response.json();
         let eventos = datos.events;
         categorias(eventos)
-        const pastEvents = eventos.filter(elemento => new Date(elemento.date)< new Date(datos.currentDate))
+        const pastEvents = eventos.filter(elemento => new Date(elemento.date) < new Date(datos.currentDate))
         traerCartas(pastEvents, card)
         //agregar escuchador de eventos categorias
         let checkboxs = document.querySelectorAll('input[type= checkbox]')
@@ -35,7 +35,6 @@ async function traerDatos() {
     }
     catch (error) {
         console.log(error);
-
     }
 }
 traerDatos()
@@ -72,27 +71,27 @@ function traerCartas(arrayCards, container) {
 //traerCartas(eventos, card)
 
 //hacer categorys dinamicas
-function categorias(array) { 
+function categorias(array) {
     const arreglo = []
-for (let element of array) {
-    let categoria = element.category
-    if (!arreglo.includes(categoria)) {
-        arreglo.push(categoria)
-    }
-} console.log(arreglo);
+    for (let element of array) {
+        let categoria = element.category
+        if (!arreglo.includes(categoria)) {
+            arreglo.push(categoria)
+        }
+    } console.log(arreglo);
 
-const formCat = document.getElementById('formCat')
-let checkbox = document.createDocumentFragment()
-for (let element of arreglo) {
-    let div = document.createElement('div')
-    div.classList.add("formCat")
+    const formCat = document.getElementById('formCat')
+    let checkbox = document.createDocumentFragment()
+    for (let element of arreglo) {
+        let div = document.createElement('div')
+        div.classList.add("formCat")
 
-    div.innerHTML = `<input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="${element}" value="${element}">
+        div.innerHTML = `<input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="${element}" value="${element}">
     <label class="form-check-label" for="${element}">${element}</label>`
 
-    checkbox.appendChild(div)
+        checkbox.appendChild(div)
 
-} formCat.appendChild(checkbox)
+    } formCat.appendChild(checkbox)
 
 }
 
@@ -108,17 +107,11 @@ function verificarSeleccion(arrayString, arrayDeObjetos) {
 
 let inputsChequeados = []
 let arraySearch = []
-
-
-
-
 function texto(valor, arrayDeObjetos) {
     if (valor == "") return arrayDeObjetos
     return arrayDeObjetos.filter(elemento => elemento.name.toLowerCase().includes(valor.toLowerCase().trim()))
-
 }
 //filtros cruzados
-
 function filtrosCruzados(array) {
     let nuevaSeleccion = verificarSeleccion(inputsChequeados, array)
     console.log(nuevaSeleccion);

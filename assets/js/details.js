@@ -26,7 +26,7 @@ function mostrarCartas(objeto) {
        <p class="card-text">Place: ${objeto.place}</p>
        <p class="card-text">Capacity: ${objeto.capacity}</p>
        <p class="card-text">Assistance: ${objeto.assistance}</p>
-       <h4 class="card-text">Price: ${objeto.price}</h4>
+       <h4 class="card-text">Price: $ ${objeto.price}</h4>
       
         <a class="btn btn-primary" onclick="history.go(-1);"> Go back</a>
        </div>
